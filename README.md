@@ -22,7 +22,7 @@ recombine -o <obsid> -t <secondid> -m <meta-data fits> -i <output dir>
 <meta-data fits>: meta-data fits file containing tile flag information and various orther useful 
 information regarding the observation. To obtain the meta-data fits file for a particular observation 
 use the following: 
-          wget http://mwa-metadata01.pawsey.org.au/metadata/fits?obs_id=<obsid> -O <obsid>.metafits
+    wget -O <obsid>.metafits http://ws.mwatelescope.org/metadata/fits?obs_id=<obsid>
 <output dir>: output product directory
 <skip course chan>: 1 will skip the generation of the recombined course channel data
 <skip ICS>: 1 will skip the generation of the incoherent sum
