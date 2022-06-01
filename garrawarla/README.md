@@ -18,5 +18,5 @@ Then, an SBATCH script ([`recombine_example.sbatch`](recombine_example.sbatch)) 
 
 In principle, any number of nodes and tasks can be chosen (up to what is available on Garrawarla).
 Each CPU has ~370 GB of memory available, and each second of input data is about 7.5 GB.
-The actual memory usage of `recombine` has not been benchmarked, but it is likely that a large number (possibly the max allowed??) is allowed.
+The actual memory usage of `recombine` has not been benchmarked, but it is likely that a large number (possibly the max allowed??) will work just fine.
 Performance for different configurations has also not been benchmarked.
