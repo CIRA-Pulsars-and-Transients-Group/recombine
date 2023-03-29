@@ -9,7 +9,7 @@ ENDTIME=$3
 SRCDIR=$4
 METAFITS=$5
 DESTDIR=$6
-SKIP_ICS=$7
+SKIP_ICS=$7 # Currently, this does nothing
 NTASKS=$8
 
 GPSSECOND=$(echo "$STARTTIME + $SLURM_PROCID" | bc)
@@ -22,7 +22,6 @@ do
         -t $GPSSECOND \
         -m $METAFITS \
         -i $DESTDIR \
-        -s $SKIP_ICS \
         -f $SRCDIR/${OBSID}_${GPSSECOND}_vcs*.dat
 
     echo "DONE"
