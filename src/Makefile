@@ -13,7 +13,7 @@ obj_files = main.o recombine.o
 deps = recombine.h
 
 %.o: %.cpp $(deps)
-	$(CXX) -c -o $@ $(CXXFLAGS) $<
+	$(CXX) -c -o $@ -I. $(CXXFLAGS) $<
 
 recombine: $(obj_files)
 	$(CXX) $^ -o $@ $(LDFLAGS)
@@ -22,3 +22,6 @@ all: recombine
 
 clean:
 	rm -f main.o recombine.o
+
+squeaky: clean
+	rm -f recombine
