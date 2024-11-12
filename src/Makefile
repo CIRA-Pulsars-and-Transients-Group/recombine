@@ -7,6 +7,7 @@ CXXFLAGS = -O3 -march=znver3 \
 		   -I${PAWSEY_CFITSIO_HOME}/include
 LDFLAGS = -L${PAWSEY_CFITSIO_HOME}/lib -lcfitsio -lcurl		   
 
+PREFIX := .
 
 src_files = main.cpp recombine.cpp
 obj_files = main.o recombine.o
@@ -19,6 +20,9 @@ recombine: $(obj_files)
 	$(CXX) $^ -o $@ $(LDFLAGS)
 
 all: recombine
+
+install: recombine
+	install -m 775 -D -t $(PREFIX) $<
 
 clean:
 	rm -f main.o recombine.o
